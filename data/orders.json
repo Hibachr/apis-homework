@@ -1,0 +1,173 @@
+[{
+  "_id": {
+    "$oid": "66a243ff2b58da3e669aa07f"
+  },
+  "order_id": 1001,
+  "user": {
+    "$oid": "60d5ec48a2b7f0b1b3cbb5a1"
+  },
+  "products": [
+    {
+      "product_id": 2001,
+      "quantity": 1
+    },
+    {
+      "product_id": 2003,
+      "quantity": 2
+    }
+  ],
+  "total_price": 1259.97,
+  "status": "shipped"
+},
+{
+  "_id": {
+    "$oid": "66a243ff2b58da3e669aa080"
+  },
+  "order_id": 1002,
+  "user": {
+    "$oid": "60d5ec48a2b7f0b1b3cbb5a1"
+  },
+  "products": [
+    {
+      "product_id": 2002,
+      "quantity": 3
+    }
+  ],
+  "total_price": 499.99,
+  "status": "processing"
+},
+{
+  "_id": {
+    "$oid": "66a243ff2b58da3e669aa081"
+  },
+  "order_id": 1003,
+  "user": {
+    "$oid": "60d5ec48a2b7f0b1b3cbb5a2"
+  },
+  "products": [
+    {
+      "product_id": 2001,
+      "quantity": 1
+    },
+    {
+      "product_id": 2002,
+      "quantity": 1
+    }
+  ],
+  "total_price": 1499.98,
+  "status": "delivered"
+},
+{
+  "_id": {
+    "$oid": "66a3fdc82b58da3e669aa0b2"
+  },
+  "order_id": 1004,
+  "user": {
+    "$oid": "66a3f00fa594563a284528e8"
+  },
+  "products": [
+    {
+      "product_id": 2002,
+      "quantity": 1
+    }
+  ],
+  "total_price": 900.99,
+  "status": "delivered"
+},
+{
+  "_id": {
+    "$oid": "66a401212b58da3e669aa0bf"
+  },
+  "order_id": 1005,
+  "user": {
+    "$oid": "66a3f00fa594563a284528e8"
+  },
+  "products": [
+    {
+      "product_id": 2002,
+      "quantity": 1
+    }
+  ],
+  "total_price": 800.99,
+  "status": "ordered"
+},
+{
+  "_id": {
+    "$oid": "66a422b12b58da3e669aa0d3"
+  },
+  "order_id": 1006,
+  "user": {
+    "$oid": "66a38888647317fe530d239f"
+  },
+  "products": [
+    {
+      "product_id": 2004,
+      "quantity": 1
+    },
+    {
+      "product_id": 2005,
+      "quantity": 4
+    }
+  ],
+  "total_price": 1500.98,
+  "status": "ordered"
+},
+{
+  "_id": {
+    "$oid": "66a425ee2b58da3e669aa0ed"
+  },
+  "order_id": 1009,
+  "user": {
+    "$oid": "66a3f00fa594563a284528e8"
+  },
+  "products": [
+    {
+      "product_id": 2006,
+      "quantity": 5
+    },
+    {
+      "product_id": 2002,
+      "quantity": 1
+    }
+  ],
+  "total_price": 5000.98,
+  "status": "delivered"
+},
+{
+  "_id": {
+    "$oid": "66a42a5b2b58da3e669aa0f7"
+  },
+  "order_id": 1008,
+  "user": {
+    "$oid": "60d5ec48a2b7f0b1b3cbb5a3"
+  },
+  "products": [
+    {
+      "product_id": 2001,
+      "quantity": 1
+    },
+    {
+      "product_id": 2001,
+      "quantity": 1
+    }
+  ],
+  "total_price": 600.99,
+  "status": "processing"
+},
+{
+  "_id": {
+    "$oid": "66a42b012b58da3e669aa0fa"
+  },
+  "order_id": 1007,
+  "user": {
+    "$oid": "60d5ec48a2b7f0b1b3cbb5a3"
+  },
+  "products": [
+    {
+      "product_id": 2002,
+      "quantity": 1
+    }
+  ],
+  "total_price": 1000.99,
+  "status": "ordered"
+}]

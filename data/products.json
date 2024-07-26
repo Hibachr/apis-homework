@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "66a244402b58da3e669aa084"
+  },
+  "product_id": 2001,
+  "name": "Laptop",
+  "category": "Electronics",
+  "price": 999.99,
+  "tags": [
+    "electronics",
+    "computers"
+  ],
+  "stock": 50
+},
+{
+  "_id": {
+    "$oid": "66a244402b58da3e669aa085"
+  },
+  "product_id": 2002,
+  "name": "Smartphone",
+  "category": "Electronics",
+  "price": 499.99,
+  "tags": [
+    "electronics",
+    "phones"
+  ],
+  "stock": 150
+},
+{
+  "_id": {
+    "$oid": "66a244402b58da3e669aa086"
+  },
+  "product_id": 2003,
+  "name": "Desk Chair",
+  "category": "Furniture",
+  "price": 129.99,
+  "tags": [
+    "furniture",
+    "office"
+  ],
+  "stock": 20
+},
+{
+  "_id": {
+    "$oid": "66a24aa1aaec7498d46381e0"
+  },
+  "product_id": 2004,
+  "name": "Jeans",
+  "category": "clothes",
+  "price": 7900,
+  "tags": [
+    "idk"
+  ],
+  "stock": 22,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a24bdda2c5c8544924a270"
+  },
+  "product_id": 2005,
+  "name": "Spoons",
+  "category": "kitchen",
+  "price": 1000,
+  "tags": [
+    "home"
+  ],
+  "stock": 90,
+  "__v": 0
+}]

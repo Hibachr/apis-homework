@@ -1,32 +1,22 @@
-const express = require("express");
-const PORT = 8000;
+import express from "express";
+import api from "./api/index.js";
+import dotenv from "dotenv";
+import CONFIG from "./config.json" assert { type: "json" };
+import mongoose from "mongoose";
 
-const requestLogger = require("./middlewares/requestLogger");
+dotenv.config();
+const PORT = process.env.PORT || 7000;
 const app = express();
 
-app.use(express.json());
-app.use(requestLogger);
+mongoose
+  .connect(CONFIG.mongo_url)
+  .then((db) => {
+    app.use(express.json());
+    app.use("/api", api({ config: CONFIG, db }));
 
-app.get("/products", (req, res) => {
-  // GET PRODUCT FROM DB
-  res.status(200).send({
-    product_count: 1,
-    size: "L",
+    app.listen(PORT, () => console.log(`SERVER IS RUNNING IN ${PORT}`));
+  })
+
+  .catch((err) => {
+    console.log(err, "Recieved an error");
   });
-});
-
-app.post("products/:id"),
-  (req, res) => {
-    // console.log("jhjh");
-    const { id } = req.params;
-    const { image } = req.body;
-
-    if (!image) {
-      res.status(418).send({ message: `No Image Sent` });
-    }
-    res.send({
-      product: `Product with ${id} created`,
-    });
-  };
-
-app.listen(PORT, () => console.log("Server is running!"));
