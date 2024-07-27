@@ -7,15 +7,25 @@ export default ({ config, db }) => {
 
   // creating a new user
   router.post("/", async (req, res) => {
+    let ErrorException = { message: "Please fill all the info required" };
+
     try {
       const newUser = req.body;
-      await usersCollection.create(newUser).then((response) => {
-        res.send({ payload: response });
-      });
+      if (newUser._id && newUser.username && newUser.email && newUser.age) {
+        await usersCollection.create(newUser).then((response) => {
+          res.send({ payload: response });
+        });
+      } else {
+        throw ErrorException;
+      }
     } catch (error) {
-      res
-        .status(500)
-        .send({ success: false, message: error.errorResponse.errmsg });
+      if (error === ErrorException) {
+        res.send({ error });
+      } else {
+        res
+          .status(500)
+          .send({ success: false, message: error.errorResponse.errmsg });
+      }
     }
   });
 
@@ -25,22 +35,26 @@ export default ({ config, db }) => {
     try {
       const users = await usersCollection.find({
         $expr: {
-          $gte: [{ $size: "$orders" }, 2],
+          $gte: [{ $size: "$orders" }, 2], // first condition : checked if there are users who have two orders or more
         },
       });
-      const filteredUsers = [];
+      const filteredUsers = []; // then i created an empty array where im gonna stock the users who verify both conditions
 
       for (let user of users) {
         const orders = await ordersCollection.find({
           user: user._id,
-          "products.quantity": { $gte: 2 },
+          "products.quantity": { $gte: 2 }, // second condition : for each user who verified the first condition we filter them according to the qty of the products in their orders (should be >=2)
         });
 
         if (orders.length > 0) {
-          filteredUsers.push(user);
+          filteredUsers.push(user); // if at least one of the users in the database verifies both conditions we stck his infos in the empty array we created and we return it
         }
       }
-      res.send({ payload: filteredUsers });
+      if (filteredUsers.length === 0) {
+        res.status(404).send({ success: false, message: "No users found" });
+      } else {
+        res.send({ payload: filteredUsers });
+      }
     } catch (error) {
       res.status(500).send({ success: false, message: error.message });
     }

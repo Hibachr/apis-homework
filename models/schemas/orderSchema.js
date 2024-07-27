@@ -3,6 +3,11 @@ import mongoose from "mongoose";
 let Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
+  order_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Order",
+    required: true,
+  },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   products: [
     {

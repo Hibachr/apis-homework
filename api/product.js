@@ -11,6 +11,7 @@ export default ({ config, db }) => {
     try {
       const newProduct = req.body;
       if (
+        newProduct._id &&
         newProduct.name &&
         newProduct.price &&
         newProduct.category &&
